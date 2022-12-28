@@ -7,7 +7,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: windows-2019
 
 steps:
 - task: AzureResourceManagerTemplateDeployment@3
@@ -16,10 +16,10 @@ steps:
     azureResourceManagerConnection: 'scratchsp'
     subscriptionId: '8972c52f-9053-446f-87ad-c96d0b293bd4'
     action: 'Create Or Update Resource Group'
-    resourceGroupName: 'gitscratchrg'
-    location: 'East US'
+    resourceGroupName: 'vaultrg'
+    location: 'Central US'
     templateLocation: 'URL of the file'
-    csmFileLink: 'https://raw.githubusercontent.com/Divya-Vennam/azure-quickstart-templates/master/quickstarts/microsoft.web/webapp-basic-linux/azuredeploy.json'
-    csmParametersFileLink: 'https://raw.githubusercontent.com/Divya-Vennam/azure-quickstart-templates/master/quickstarts/microsoft.web/webapp-basic-linux/azuredeploy.parameters.json'
+    csmFileLink: 'https://raw.githubusercontent.com/Divya-Vennam/azure-quickstart-templates/master/quickstarts/microsoft.web/webapp-basic-windows/azuredeploy.json'
+    csmParametersFileLink: 'https://raw.githubusercontent.com/Divya-Vennam/azure-quickstart-templates/master/quickstarts/microsoft.web/webapp-basic-windows/azuredeploy.parameters.json'
     deploymentMode: 'Incremental'
     deploymentName: 'webapp'
